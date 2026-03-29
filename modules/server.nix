@@ -25,6 +25,12 @@ let
       speedtest_enable = cfg.speedtestEnable;
       ping_enable = cfg.pingEnable;
       auth_failure_status_code = cfg.authFailureStatusCode;
+      # listen_protocols is required - at least one protocol must be enabled
+      listen_protocols = {
+        http1 = { };
+        http2 = { };
+        quic = { };
+      };
     }
     // optionalAttrs (cfg.metrics.address != null) {
       metrics = {
